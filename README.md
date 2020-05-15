@@ -2,6 +2,13 @@
 
 *Origins of the Moon* is a game about the origins of the moon made for children.
 
+## Learning Objectives of Our Game 
+- Discuss basic facts about the moon
+- Recognize moon phases when viewing the moon
+- Understand the origin of moon craters
+- Learn about theories on how the moon was created
+- Walk through of the history of our moon
+
 ## User Stories
 
 The following functionality is **completed**:
@@ -19,7 +26,7 @@ Here's a walkthrough of implemented user stories:
 
 List an 3rd party libraries, icons, graphics, or other assets we used in our game.
 
-- 
+- [insert here]
 
 ## Notes
 
