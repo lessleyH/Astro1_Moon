@@ -50,14 +50,13 @@ while True:
         if event.type == pygame.QUIT: 
             sys.exit()
 
-    foo = True
+    # move moon in orbit
     ticks = pygame.time.get_ticks() 
     if ticks > next_tick:
         next_tick += speed
         angle += 1
         angle %= 360
         moon_above_rect.center = move_coords(angle, radius)
-    # Rotated version of the image and the shifted rect.
 
     # display
     screen.blit(background, (0, 0))
