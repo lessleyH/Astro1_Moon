@@ -2,18 +2,32 @@
 
 *Origins of the Moon* is a game about the origins of the moon made for children.
 
-## Learning Objectives of Our Game 
+## Learning Objectives of Our Game
 - Discuss basic facts about the moon
 - Recognize moon phases when viewing the moon
 - Understand the origin of moon craters
 - Learn about theories on how the moon was created
 - Walk through of the history of our moon
 
+## Basic Game Design lol as of May 15, 2020
++ The goal of the game is to avoid incoming obstacles:
+  - The player starts on the left side of the screen.
+  - The obstacles enter randomly from the right and move left in a straight line.
++ The player can move left, right, up, or down to avoid the obstacles.
++ The player cannot move off the screen.
++ The game ends either when the player is hit by an obstacle or when the user closes the window.
+
+
 ## User Stories
 
 The following functionality is **completed**:
-
-- [X ]
++ [ ] Start Screen
++ [ ] Formation of the Moon
+- Giant Impact Hypothesis
+- Spots of crater forming on the moon
++ [ ] Earth Moon Systems
+- Phases of the moon
++ [ ] Age of certain Surface of the moon
 
 ## Video Walkthrough
 
@@ -27,6 +41,9 @@ Here's a walkthrough of implemented user stories:
 List an 3rd party libraries, icons, graphics, or other assets we used in our game.
 
 - [insert here]
+- Pygame: https://www.pygame.org/docs 
+- Reference for learning about Pygame = https://realpython.com/pygame-a-primer/
+- 
 
 ## Notes
 
