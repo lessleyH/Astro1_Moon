@@ -26,7 +26,16 @@ Here's a walkthrough of implemented user stories:
 
 List an 3rd party libraries, icons, graphics, or other assets we used in our game.
 
-- [insert here]
+- Background image (space.jpg) 
+  - https://www.pexels.com/search/night%20sky/
+- Earth images (earth_from_side.png, earth_from_above.png)
+  - http://pngimg.com/uploads/earth/earth_PNG39.png
+  - https://www.cleanpng.com/png-north-pole-earth-globe-world-northern-sea-route-pn-616378/
+- Moon images (moon_from_above.png)
+  - https://www.si.edu/newsdesk/photos/north-pole-moon
+- Earth and Moon facts
+  - https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html
+  - https://spaceplace.nasa.gov/moon-distance/en/
 
 ## Notes
 
