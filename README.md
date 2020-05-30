@@ -36,6 +36,8 @@ List an 3rd party libraries, icons, graphics, or other assets we used in our gam
 - Earth and Moon facts
   - https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html
   - https://spaceplace.nasa.gov/moon-distance/en/
+- Arrow image (arrow.png)
+  - https://ya-webdesign.com/explore/red-right-arrow-png/
 
 ## Notes
 
