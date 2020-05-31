@@ -5,6 +5,7 @@ from pygame.sprite import Sprite
 from pygame.rect import Rect
 from enum import Enum
 from pygame.sprite import RenderUpdates
+from player import* 
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -31,10 +32,9 @@ def create_surface_with_text(text, font_size, text_rgb, bg_rgb):
     surface, _ = font.render(text=text, fgcolor=text_rgb, bgcolor=bg_rgb)
     return surface.convert_alpha()
 
-
+#user interface element that can be added to a surface
 class UIElement(Sprite):
-    """ An user interface element that can be added to a surface """
-
+    
     def __init__(self, center_position, text, font_size, bg_rgb, text_rgb, action=None):
         """
         Args:
@@ -89,15 +89,6 @@ class UIElement(Sprite):
         """ Draws element onto a surface """
         surface.blit(self.image, self.rect)
 
-#Stores information about a player
-class Player:
-    def __init__(self, current_level=1):
-        super(Player,  self).__init__()
-        self.surf = pygame.image.load("./assets/jeyL.png").convert()
-        self.surf.set_colorkey((255, 255, 255), RLEACCEL)
-        self.rect = self.surf.get_rect()
-        self.current_level = current_level
-
 def title_screen(screen):
     start_btn = UIElement(
         center_position=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 +100),
@@ -112,7 +103,7 @@ def title_screen(screen):
         font_size=30,
         bg_rgb=BLACK,
         text_rgb=WHITE,
-        text="Quit Game",
+        text="Quit Game(ESC)",
         action=GameState.QUIT,
     )
 
@@ -137,7 +128,7 @@ def play_level(screen, player):
         bg_rgb=BLACK,
         text_rgb=WHITE,
         text=f"Formation of the Moon",
-        action=GameState.NEXT_LEVEL,
+        action=GameState.FORMATION_LEVEL,
     )
 
     earthMoon_btn = UIElement(
@@ -146,7 +137,7 @@ def play_level(screen, player):
         bg_rgb=BLACK,
         text_rgb=WHITE,
         text=f"Earth Moon Systems",
-        action=GameState.NEXT_LEVEL,
+        action=GameState.EARTHMOON_LEVEL,
     )
 
     AgeMoon_btn = UIElement(
@@ -155,23 +146,27 @@ def play_level(screen, player):
         bg_rgb=BLACK,
         text_rgb=WHITE,
         text=f"Age of the Moon",
-        action=GameState.NEXT_LEVEL,
+        action=GameState.MOONAGE_LEVEL,
     )
 
     buttons = RenderUpdates(return_btn, formation_btn, earthMoon_btn, AgeMoon_btn)
 
     return game_loop(screen, buttons)
 
-
+#Handles game loop until an action is return by a button in the
+#buttons sprite renderer.
 def game_loop(screen, buttons):
-    """ Handles game loop until an action is return by a button in the
-        buttons sprite renderer.
-    """
     while True:
         mouse_up = False
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONUP and event.button == 1:
                 mouse_up = True
+        
+            # Did the user hit a key?
+            if event.type == KEYDOWN:
+                # Was it the Escape key? If so, stop the loop.
+                if event.key == K_ESCAPE:
+                    pygame.quit()
         screen.fill(BLACK)
 
         for button in buttons:
@@ -186,5 +181,7 @@ def game_loop(screen, buttons):
 class GameState(Enum):
     QUIT = -1
     TITLE = 0
-    NEWGAME = 1
-    NEXT_LEVEL = 2
+    NEWGAME = 0
+    FORMATION_LEVEL = 1
+    EARTHMOON_LEVEL = 2
+    MOONAGE_LEVEL = 3

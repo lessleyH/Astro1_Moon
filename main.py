@@ -1,4 +1,3 @@
-
 import pygame
 from menu import*
 
@@ -21,14 +20,28 @@ def main():
         if game_state == GameState.NEWGAME:
             player = Player()
             game_state = play_level(screen, player)
+            print(player.current_level)
 
-        if game_state == GameState.NEXT_LEVEL:
+        if game_state == GameState.FORMATION_LEVEL:
             player.current_level += 1
+            print(player.current_level)
+            game_state = play_level(screen, player)
+
+        if game_state == GameState.EARTHMOON_LEVEL:
+            player.current_level += 1
+            print(player.current_level)
+            game_state = play_level(screen, player)
+        
+        if game_state == GameState.MOONAGE_LEVEL:
+            player.current_level += 1
+            print(player.current_level)
             game_state = play_level(screen, player)
 
         if game_state == GameState.QUIT:
+            print(player.current_level)
             pygame.quit()
             return
+        print(player.current_level)
 
 if __name__ == "__main__":
     main()
