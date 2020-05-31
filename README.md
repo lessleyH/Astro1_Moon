@@ -33,11 +33,14 @@ List an 3rd party libraries, icons, graphics, or other assets we used in our gam
   - https://www.cleanpng.com/png-north-pole-earth-globe-world-northern-sea-route-pn-616378/
 - Moon images (moon_from_above.png)
   - https://www.si.edu/newsdesk/photos/north-pole-moon
-- Earth and Moon facts
+- Sun, Earth, and Moon facts
   - https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html
   - https://spaceplace.nasa.gov/moon-distance/en/
+  - https://solarsystem.nasa.gov/solar-system/sun/by-the-numbers/
 - Arrow image (arrow.png)
   - https://ya-webdesign.com/explore/red-right-arrow-png/
+- Zig-zag image (zig-zag.png)
+  - https://pngimage.net/zigzag-border-png/
 
 ## Notes
 
