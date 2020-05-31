@@ -19,12 +19,12 @@
 ## User Stories
 
 The following functionality is **completed**:
-+ [ ] Start Screen
++ [X] Start Screen
 + [ ] Formation of the Moon
-- Giant Impact Hypothesis
-- Spots of crater forming on the moon
++ [ ] Giant Impact Hypothesis
++ [ ] Spots of crater forming on the moon
 + [ ] Earth Moon Systems
-- Phases of the moon
++ [ ] Phases of the moon
 + [ ] Age of certain Surface of the moon
 
 ## Video Walkthrough
