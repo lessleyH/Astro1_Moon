@@ -9,12 +9,12 @@
 - Learn about theories on how the moon was created
 - Walk through of the history of our moon
 
-## Basic Game Design lol as of May 15, 2020
-+ How to run our game doanload and run in terminal: 
+## How to play our game: 
++ Download zip file from this repository
++ Open your terminal and run the following comands: 
 > $ pip3 install -r requirements.txt
 
 > $ python3 main.py
-
 
 ## User Stories
 
