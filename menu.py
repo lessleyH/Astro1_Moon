@@ -98,32 +98,6 @@ class Player:
         self.rect = self.surf.get_rect()
         self.current_level = current_level
 
-
-
-def main():
-    pygame.init()
-    pygame.display.set_caption("Origins of the Moon")
-
-    screen = pygame.display.set_mode((SCREEN_WIDTH , SCREEN_HEIGHT))
-    game_state = GameState.TITLE
-
-    while True:
-        if game_state == GameState.TITLE:
-            game_state = title_screen(screen)
-
-        if game_state == GameState.NEWGAME:
-            player = Player()
-            game_state = play_level(screen, player)
-
-        if game_state == GameState.NEXT_LEVEL:
-            player.current_level += 1
-            game_state = play_level(screen, player)
-
-        if game_state == GameState.QUIT:
-            pygame.quit()
-            return
-
-
 def title_screen(screen):
     start_btn = UIElement(
         center_position=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 +100),
@@ -214,7 +188,3 @@ class GameState(Enum):
     TITLE = 0
     NEWGAME = 1
     NEXT_LEVEL = 2
-
-
-if __name__ == "__main__":
-    main()
