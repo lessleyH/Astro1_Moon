@@ -102,7 +102,7 @@ while True:
             sys.exit()
         # key press
         elif event.type == pygame.KEYDOWN:
-            # must be during story
+            # during story
             if topic: 
                 if event.key == pygame.K_LEFT:
                     # move forward in story
@@ -118,7 +118,7 @@ while True:
                 elif event.key == pygame.K_ESCAPE:
                     topic = None
                     background, background_rect = space, space_rect
-            # must be on main screen
+            # main screen
             else:
                 # switch side of Moon
                 if event.key == pygame.K_SPACE:
@@ -129,7 +129,7 @@ while True:
         # mouse press
         elif event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             pos = pygame.mouse.get_pos()
-            # must be on main screen
+            # main screen
             if not topic:
                 # was a button clicked?
                 if current_side is near_side:
