@@ -133,6 +133,7 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
             sys.exit()
+        # key press
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
                 # move forward in story
