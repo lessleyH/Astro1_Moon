@@ -38,10 +38,35 @@ Here's a walkthrough of implemented user stories:
 
 List an 3rd party libraries, icons, graphics, or other assets we used in our game.
 
+<<<<<<< HEAD
 - [insert here]
 - Pygame: https://www.pygame.org/docs 
 - Reference for learning about Pygame = https://realpython.com/pygame-a-primer/
 - 
+=======
+- Background image (space.jpg) 
+  - https://www.pexels.com/search/night%20sky/
+- Earth images (earth_from_side.png, earth_from_above.png)
+  - http://pngimg.com/uploads/earth/earth_PNG39.png
+  - https://www.cleanpng.com/png-north-pole-earth-globe-world-northern-sea-route-pn-616378/
+- Moon images (moon_from_above.png)
+  - https://www.si.edu/newsdesk/photos/north-pole-moon
+  - https://en.wikipedia.org/wiki/Far_side_of_the_Moon#/media/File:Moon_Farside_LRO.jpg
+  - https://en.wikipedia.org/wiki/Near_side_of_the_Moon#/media/File:Moon_nearside_LRO.jpg
+  - https://en.wikipedia.org/wiki/Geology_of_the_Moon#/media/File:Mons_Rümker_Apollo_15.jpg
+  - https://earthsky.org/space/different-sources-ice-moons-south-pole
+  - https://commons.wikimedia.org/wiki/File:Lunar_highlands_(AS16-M-3007).jpg
+  - https://en.wikipedia.org/wiki/Lunar_craters#/media/File:AS10-29-4324.jpg
+- Sun, Earth, and Moon facts
+  - https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html
+  - https://spaceplace.nasa.gov/moon-distance/en/
+  - https://solarsystem.nasa.gov/solar-system/sun/by-the-numbers/
+  - http://cnx.org/content/col11992/1.13
+- Arrow image (arrow.png)
+  - https://ya-webdesign.com/explore/red-right-arrow-png/
+- Zig-zag image (zig-zag.png)
+  - https://pngimage.net/zigzag-border-png/
+>>>>>>> origin/pickle
 
 ## Notes
 
