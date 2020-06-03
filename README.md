@@ -38,12 +38,6 @@ Here's a walkthrough of implemented user stories:
 
 List an 3rd party libraries, icons, graphics, or other assets we used in our game.
 
-<<<<<<< HEAD
-- [insert here]
-- Pygame: https://www.pygame.org/docs 
-- Reference for learning about Pygame = https://realpython.com/pygame-a-primer/
-- 
-=======
 - Background image (space.jpg) 
   - https://www.pexels.com/search/night%20sky/
 - Earth images (earth_from_side.png, earth_from_above.png)
@@ -66,7 +60,6 @@ List an 3rd party libraries, icons, graphics, or other assets we used in our gam
   - https://ya-webdesign.com/explore/red-right-arrow-png/
 - Zig-zag image (zig-zag.png)
   - https://pngimage.net/zigzag-border-png/
->>>>>>> origin/pickle
 
 ## Notes
 
