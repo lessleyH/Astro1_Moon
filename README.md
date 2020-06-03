@@ -12,7 +12,7 @@
 ## How to play our game: 
 + Download zip file from this repository
 + Open your terminal and run the following comands: 
-> $ pip3 install -r requirements.txt
+> $ python3 -m pip install -U pygame --user
 
 > $ python3 main.py
 
@@ -20,19 +20,21 @@
 
 The following functionality is **completed**:
 + [X] Start Screen
-+ [ ] Formation of the Moon
-+ [ ] Giant Impact Hypothesis
-+ [ ] Spots of crater forming on the moon
-+ [ ] Earth Moon Systems
-+ [ ] Phases of the moon
-+ [ ] Age of certain Surface of the moon
++ [X] Giant Impact Hypothesis
++ [X] Spots of crater forming on the moon
++ [X] Earth Moon Systems
++ [X] Phases of the moon
++ [X] Age of certain Surface of the moon
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+<img src=https://imgur.com/F60JOR5.gif/>
 
-<!--- just <img src='' width='' alt='Video Walkthrough' /> --->
-- if gif doesn't show: will add imgur link soon
+<img src=https://imgur.com/QEtMzlV.gif/>
+
+
+ <!-- <img src='https://imgur.com/QEtMzlV' width='' alt='Origin of the Moon pt2' />  -->
 
 ## Credits
 
@@ -60,10 +62,6 @@ List an 3rd party libraries, icons, graphics, or other assets we used in our gam
   - https://ya-webdesign.com/explore/red-right-arrow-png/
 - Zig-zag image (zig-zag.png)
   - https://pngimage.net/zigzag-border-png/
-
-## Notes
-
-Describe any challenges encountered while building the game.
 
 ## License
 

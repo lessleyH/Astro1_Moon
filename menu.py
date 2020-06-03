@@ -122,7 +122,7 @@ def play_level(screen):
     )
 
     formation_btn = UIElement(
-        center_position=(SCREEN_WIDTH//2, 260),
+        center_position=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 +100),
         font_size=30,
         bg_rgb=BLACK,
         text_rgb=WHITE,
@@ -131,7 +131,7 @@ def play_level(screen):
     )
 
     earthMoon_btn = UIElement(
-        center_position=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2),
+        center_position=(SCREEN_WIDTH//2, 260),
         font_size=30,
         bg_rgb=BLACK,
         text_rgb=WHITE,
@@ -140,7 +140,7 @@ def play_level(screen):
     )
 
     AgeMoon_btn = UIElement(
-        center_position=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 +100),
+        center_position=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2),
         font_size=30,
         bg_rgb=BLACK,
         text_rgb=WHITE,
@@ -148,7 +148,7 @@ def play_level(screen):
         action=GameState.MOONAGE_LEVEL,
     )
 
-    buttons = RenderUpdates(return_btn, formation_btn, earthMoon_btn, AgeMoon_btn)
+    buttons = RenderUpdates(return_btn,  earthMoon_btn, AgeMoon_btn, formation_btn)
 
     return game_loop(screen, buttons)
 
