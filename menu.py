@@ -5,18 +5,12 @@ from pygame.sprite import Sprite
 from pygame.rect import Rect
 from enum import Enum
 from pygame.sprite import RenderUpdates
-from player import* 
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
 # Updated to conform to flake8 and black standards
 from pygame.locals import (
-    RLEACCEL,
-    K_UP,
-    K_DOWN,
-    K_LEFT,
-    K_RIGHT,
     K_ESCAPE,
     KEYDOWN,
     QUIT,
@@ -112,7 +106,7 @@ def title_screen(screen):
     return game_loop(screen, buttons)
 
 
-def play_level(screen, player):
+def play_level(screen):
     return_btn = UIElement(
         center_position=(SCREEN_WIDTH//2, SCREEN_HEIGHT-50),
         font_size=20,

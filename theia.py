@@ -1,99 +1,173 @@
-import pygame, sys 
-# Updated to conform to flake8 and black standards
-from pygame.locals import (
-    RLEACCEL,
-    K_UP,
-    K_DOWN,
-    K_LEFT,
-    K_RIGHT,
-    K_ESCAPE,
-    KEYDOWN,
-    QUIT,
-)
+import os, sys
+import pygame
 
-# Define constants for the screen width and height
-SCREEN_WIDTH = 1040
-SCREEN_HEIGHT = 720
-size =(SCREEN_WIDTH ,SCREEN_HEIGHT)
+# get location of file
+file_path = os.path.dirname(__file__)
+
+# constants
+size = width, height = 1040, 720 # pixels
+km_to_pixel = 0.175 # real world units to computer screen units
+mars_diameter = 6779 # km
+proto_earth_diameter = 12742 #km
+WHITE = (255, 255, 255) # colors
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+GREEN = (0, 255, 0)
+BLUE = (0, 0, 255)
+ORANGE = (255, 165, 0)
+button_radius = 15
+
+# initialize game
+pygame.init()
+screen = pygame.display.set_mode(size)
+pygame.display.set_caption('Origins of the Moon')
+font = pygame.font.SysFont(None, 24)
+
+### LOAD SURFACES ###
+
+# background surfaces
+space = pygame.image.load(os.path.join(file_path, "assets/bg.jpg"))
+space = pygame.transform.scale(space, size)
+space = space.convert()
+space_rect = space.get_rect()
+
+#Proto Earth 
+proto_earth = pygame.image.load(os.path.join(file_path, "assets/gih/protoEarth.jpg"))
+proto_earth = pygame.transform.scale(proto_earth, size)
+proto_earth = proto_earth.convert()
+proto_earth_rect = proto_earth.get_rect()
+
+#Theia First Impact 
+theia_impact = pygame.image.load(os.path.join(file_path, "assets/gih/Theia_Impact.png"))
+theia_impact = pygame.transform.scale(theia_impact, size)
+theia_impact = theia_impact.convert()
+theia_impact_rect = theia_impact.get_rect()
+
+#Theia Impact Explostion
+theia_2 = pygame.image.load(os.path.join(file_path, "assets/gih/Thea_impact3.jpg"))
+theia_2= pygame.transform.scale(theia_2, size)
+theia_2 = theia_2.convert()
+theia_2_rect = theia_2.get_rect()
+
+#Theia Impact Explostion
+theia_3 = pygame.image.load(os.path.join(file_path, "assets/gih/ring_protoearth.jpg"))
+theia_3= pygame.transform.scale(theia_3, size)
+theia_3 = theia_3.convert()
+theia_3_rect = theia_3.get_rect()
+
+# Theia's actual size free floating png 
+# theia_first = pygame.image.load(os.path.join(file_path, "assets/gih/MT.png"))
+# theia_first  = pygame.transform.scale(theia_first, (int(mars_diameter*km_to_pixel), int(mars_diameter*km_to_pixel)))
+# theia_first = theia_first.convert()
+# theia_first_rect = theia_first.get_rect()
+# theia_first_rect.centerx, theia_first_rect.centery = width//2, height//2
+
+# Proto-Earth free floating png
+# proto_earth_s = pygame.image.load(os.path.join(file_path, "assets/gih/proto-earth.png"))
+# proto_earth_s = pygame.transform.scale(proto_earth_s, (int(proto_earth_diameter*km_to_pixel), int(proto_earth_diameter*km_to_pixel)))
+# proto_earth_s = proto_earth_s.convert()
+# proto_earth_s = proto_earth_s.get_rect()
+# proto_earth_s_rect.centerx, proto_earth_s_rect.centery = width//2, height//2
+
+# text surfaces
+title = font.render('Giant Impact Hypothesis:', True, WHITE)
+story, stats, topic = {}, {}, None
+with open(os.path.join(file_path, 'assets/gih/story.txt')) as file:
+    for line in file:
+        if line.startswith('*'):
+            topic = line[1:].rstrip('\n')
+            story[topic] = []
+            stats[topic] = font.render(topic+':', True, WHITE)
+        else:
+            story[topic].append(font.render(line.rstrip('\n'), True, WHITE))
+story_i, topic = 0, None
+guidance = font.render('LEFT/RIGHT: for narration,   ESC: exit,   Press the LEFT arrow to start. Have fun!', True, WHITE)
+progress = None
+
+### BEGIN ANIMATION ###
+
+# variables
+background, background_rect = space, space_rect
+step = 0 #variable for arc
+keydown = False 
+# animation
+while True:
+    # events
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT: 
+            sys.exit()
+        # key press
+        elif event.type == pygame.KEYDOWN:
+            keydown = True
+            # during story
+            print("This is topic rn", topic)
+            if topic: 
+                if event.key == pygame.K_LEFT:
+                    # move forward in story
+                    print("Hi i am here")
+                    if story_i > 0:
+                        progress = font.render('{} of {}'.format(story_i+1, len(story[topic])), True, WHITE)
+                        print("++++++++++++++++++all the way at the top", story[topic])
+                    
+
+                elif event.key == pygame.K_RIGHT:
+                    # move backward in story
+                    if story_i < len(story[topic])-1:
+                        progress = font.render('{} of {}'.format(story_i+1, len(story[topic])), True, WHITE)
+                    
+                
+                # exit story
+                elif event.key == pygame.K_ESCAPE:
+                    topic = None
+                    background, background_rect = space, space_rect
+                    #Go back to menu (?)
+                
+            
+            # main screen
+            if not topic and step == 0:
+                topic, story_i = 'Space', 0
+                background, background_rect = space, space_rect
+                if(story_i == len(story[topic])-1):
+                    step +=1
 
 
-def set_up(): 
-    clock = pygame.time.Clock()
-    pygame.init()
-    pygame.display.set_caption("Origins of the Moon")
-    win = pygame.display.set_mode((SCREEN_WIDTH , SCREEN_HEIGHT))
-    return win, clock 
+            print(step, " outsife if ")   
 
+            if topic and step> 0 and story_i >0: 
 
-class Theia(pygame.sprite.Sprite): 
-    def __init__(self):
-        super(Theia, self).__init__()
-        self.width = 200
-        self.height = 150
-        player_img = pygame.image.load("./assets/MT.png")
-        player_img = pygame.transform.scale(player_img, (200, 150))
-        self.surf = player_img.convert()
-        self.surf.set_colorkey((255, 255, 255), RLEACCEL)
-        self.rect = pygame.draw.circle(self.surf, (0,0,0), (10, 10), 5)
-        self.wrap = False
-        self.size = self.surf.get_size()
-        self.bigger_img = pygame.transform.scale(self.surf, (int(self.size[0]*2), int(self.size[1]*2))).convert()
+                if step ==1: 
+                    topic, story_i = 'Proto-Earth', 0
+                    background, background_rect = proto_earth, proto_earth_rect
 
-    def update_size(self, value = 50):
-        self.width += value
-        self.height += value
+                if step ==2:
+                    topic, story_i = 'Theia Impact', 0
+                    background, background_rect = theia_impact, theia_impact_rect
 
+                if step ==3:
+                    topic, story_i = 'Theia Graze', 0
+                    background, background_rect = theia_2, theia_2_rect
 
-def main():
+                if step ==4:
+                    topic, story_i = 'Our Moon', 0
+                    background, background_rect = theia_3, theia_3_rect
+                
 
+    # increment progress metric
+    if topic:
+        progress = font.render('{} of {}'.format(story_i+1, len(story[topic])), True, WHITE)
 
-    win, clock = set_up()
-
-    background = pygame.image.load("./assets/bg.jpg")
-    background = pygame.transform.scale(background, (size))
-    background = background.convert()
-    background_rect = background.get_rect()
-
-
-    theia = Theia()
-    all_sprites = pygame.sprite.Group()
-    all_sprites.add(theia)
-
-
-    running = True
-    while running:
-        win.blit(background, (0, 0))
-
-        # Did the user click the window close button?
-        for event in pygame.event.get():
-
-            # Did the user hit a key?
-            if event.type == KEYDOWN:
-                # Was it the Escape key? If so, stop the loop.
-                if event.key == K_ESCAPE:
-                    running = False
-
-            elif event.type == pygame.QUIT:
-                running = False
-
-
-        for entity in all_sprites:
-            win.blit(entity.surf, entity.rect)
-
-        
-        win.blit(theia.surf, theia.rect)
-
-
-        win.blit(theia.bigger_img,[100,100] )
-
-        # Flip the display
-        pygame.display.flip()
-
-        # Ensure program maintains a rate of 30 frames per second
-        clock.tick(30)
-
-    # Done! Time to quit.
-    pygame.quit()
-
-if __name__ == "__main__":
-    main()
+    # display everything
+    screen.blit(background, (0, 0))
+    pygame.draw.rect(screen, BLACK, (width//2 - title.get_rect().width//2, title.get_rect().height, title.get_rect().width, title.get_rect().height))
+    screen.blit(title, (width//2 - title.get_rect().width//2, title.get_rect().height))
+    
+    if topic:
+        pygame.draw.rect(screen, BLACK, ((width-story[topic][story_i].get_rect().width)//2, height-2*story[topic][story_i].get_rect().height, story[topic][story_i].get_rect().width, story[topic][story_i].get_rect().height))
+        screen.blit(story[topic][story_i], ((width-story[topic][story_i].get_rect().width)//2, height-2*story[topic][story_i].get_rect().height))
+        screen.blit(progress, ((width-progress.get_rect().width-10, height-2*progress.get_rect().height)))
+        pygame.draw.rect(screen, BLACK, (10, stats[topic].get_rect().height, stats[topic].get_rect().width, stats[topic].get_rect().height))
+        screen.blit(stats[topic], (10, stats[topic].get_rect().height))
+    else: 
+        screen.blit(guidance, (10, height-2*guidance.get_rect().height))
+    # update display
+    pygame.display.update()
