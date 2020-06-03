@@ -193,8 +193,8 @@ def game_loop(screen, buttons):
 
 
 class GameState(Enum):
-    QUIT = -1
-    TITLE = 0
+    QUIT = -2
+    TITLE = -1
     NEWGAME = 0
     FORMATION_LEVEL = 1
     EARTHMOON_LEVEL = 2
