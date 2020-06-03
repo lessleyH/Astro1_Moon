@@ -1,4 +1,4 @@
-import pygame
+import pygame, sys
 import random
 import pygame.freetype
 from pygame.sprite import Sprite
@@ -167,6 +167,11 @@ def game_loop(screen, buttons):
                 # Was it the Escape key? If so, stop the loop.
                 if event.key == K_ESCAPE:
                     pygame.quit()
+                    sys.exit()
+
+            if event.type == QUIT:
+                pygame.quit()    
+                sys.exit()        
         screen.fill(BLACK)
 
         for button in buttons:
