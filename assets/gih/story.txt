@@ -1,17 +1,16 @@
-*Space
-Before we can ever begin the story of the moon we must start with the Earth…
-When the solar system formed there were a lot more objects orbiting the sun then now
-*Proto-Earth
-This is what the EarthThat meant that there were lots of collisions and no doubt the 
-Earth suffered many impacts 
-Roughly 50 million years when things seemed to settled down 
-*Theia Impact
-A mars sized planet name Theia slammed into our young planet 
-The impact of Theia’s grazing collision on the Earth was colossal 
-*Theia Graze
+The origin of the Moon remains mysterious, 
+but since astronauts walked on the Moon in 1969 and brought back rock and soil samples, 
+we know more about it now than before.
+The most prominent idea for how the moon formed is the GIANT IMPACT HYPOTHESIS
+4.6 billion years ago when the solar system formed there were a lot more objects orbiting the sun then now
+That meant that there were lots of collisions and no doubt Earth suffered many impacts 
+A mars sized(about one-tenth the size of Earth) planet name Theia slammed into our young planet 
+The impact of Theia’s was a grazing collision on the Earth was colossal 
 Blasting a huge amount of material from both planets into space 
-Most of the objects came from the outer layers of the earth 
-*Our Moon
-This material rapidly coalesced into the moon 
-That is the giant impact hypothesis! 
-Cool, right? Click ESC key to return to the main menu
+Some of the material from the impact was absorbed into the liquefied Earth 
+But some material ricocheted into space, where it settled into orbit and coalesced as the Moon
+At first the Moon orbited much closer to Earth  
+It is still moving away at a rate of almost two inches (four centimeters) per year.
+The Moon significantly affects conditions on Earth. 
+The impact that produced the Moon tilted Earth on its axis. 
+Cool, right? Click ESC key to return to the main menu to learn more!

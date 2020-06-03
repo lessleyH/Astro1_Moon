@@ -89,13 +89,6 @@ class UIElement(Sprite):
         surface.blit(self.image, self.rect)
 
 def title_screen(screen):
-    title = UIElement(
-        center_position=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2 -50),
-        font_size=30,
-        bg_rgb=BLACK,
-        text_rgb=WHITE,
-        text="Lessley & Aadil\'s Creative Project: Origins of the Moon",
-    )
     start_btn = UIElement(
         center_position=(SCREEN_WIDTH//2, SCREEN_HEIGHT//2),
         font_size=30,
@@ -113,7 +106,7 @@ def title_screen(screen):
         action=GameState.QUIT,
     )
 
-    buttons = RenderUpdates(title, start_btn, quit_btn)
+    buttons = RenderUpdates(start_btn, quit_btn)
 
     return game_loop(screen, buttons)
 
@@ -162,9 +155,11 @@ def play_level(screen):
 #Handles game loop until an action is return by a button in the
 #buttons sprite renderer.
 def game_loop(screen, buttons):
-    bg = pygame.image.load("./assets/bg.jpg")
-    bg = pygame.transform.scale(bg, (SCREEN_WIDTH, SCREEN_HEIGHT))
-    bg = bg.convert()
+
+    bg_title = pygame.image.load("./assets/bg_title.png")
+    bg_title = pygame.transform.scale(bg_title, (SCREEN_WIDTH, SCREEN_HEIGHT))
+    bg_title = bg_title.convert()
+
     while True:
         mouse_up = False
         for event in pygame.event.get():
@@ -184,17 +179,18 @@ def game_loop(screen, buttons):
 
         for button in buttons:
             ui_action = button.update(pygame.mouse.get_pos(), mouse_up)
+
             if ui_action is not None:
                 return ui_action
 
-        screen.blit(bg, (0, 0))
+        screen.blit(bg_title, (0, 0))
         buttons.draw(screen)
         pygame.display.flip()
 
 
 class GameState(Enum):
-    QUIT = -1
-    TITLE = 0
+    QUIT = -2
+    TITLE = -1
     NEWGAME = 0
     FORMATION_LEVEL = 1
     EARTHMOON_LEVEL = 2

@@ -2,6 +2,7 @@ import pygame
 from menu import*
 from phases import earth_moon
 from surface import age_moon
+from theia import theia_moon
 
 # Define constants for the screen width and height
 SCREEN_WIDTH = 1040
@@ -22,29 +23,22 @@ def main():
 
         if game_state == GameState.NEWGAME:
             game_state = play_level(screen)
-            print(current_level)
 
         if game_state == GameState.FORMATION_LEVEL:
             current_level += 1
-            print(current_level)
-            game_state = play_level(screen)
+            game_state = theia_moon(screen)
 
         if game_state == GameState.EARTHMOON_LEVEL:
             current_level += 1
-            print(current_level)
             game_state = earth_moon(screen)
         
         if game_state == GameState.MOONAGE_LEVEL:
             current_level += 1
-            print(current_level)
             game_state = age_moon(screen)
 
         if game_state == GameState.QUIT:
-            print(current_level)
             pygame.quit()
             return
-
-        print(current_level)
 
 if __name__ == "__main__":
     main()
