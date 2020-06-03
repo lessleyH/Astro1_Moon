@@ -26,7 +26,7 @@ font = pygame.font.SysFont(None, 24)
 ### LOAD SURFACES ###
 
 # background surfaces
-space = pygame.image.load(os.path.join(file_path, "assets/bg.jpg"))
+space = pygame.image.load(os.path.join(file_path, "assets/space.jpg"))
 space = pygame.transform.scale(space, size)
 space = space.convert()
 space_rect = space.get_rect()
