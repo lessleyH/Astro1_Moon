@@ -27,11 +27,9 @@ The following functionality is **completed**:
 + [X] Age of certain Surface of the moon
 
 ## Video Walkthrough
+[Imgur](https://imgur.com/F60JOR5)
 
-Here's a walkthrough of implemented user stories:
-<img src=https://imgur.com/F60JOR5.gif/>
-
-<img src=https://imgur.com/QEtMzlV.gif/>
+[Imgur](https://imgur.com/QEtMzlV)
 
 
  <!-- <img src='https://imgur.com/QEtMzlV' width='' alt='Origin of the Moon pt2' />  -->
