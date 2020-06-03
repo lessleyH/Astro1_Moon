@@ -14,9 +14,6 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH , SCREEN_HEIGHT))
     game_state = GameState.TITLE
 
-    pygame.mixer.music.load('./assets/epic_soundtrack.wav')
-    pygame.mixer.music.play(-1)
-
     current_level = 0
 
     while True:
