@@ -1,10 +1,20 @@
-import pygame, sys
+import pygame
+import sys
+import os
 import random
 import pygame.freetype
 from pygame.sprite import Sprite
 from pygame.rect import Rect
 from enum import Enum
 from pygame.sprite import RenderUpdates
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base_path, relative_path)
+
+if getattr(sys, 'assets', False):
+    os.chdir(sys._MEIPASS)
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
@@ -27,7 +37,7 @@ SCREEN_HEIGHT = 720
 
 def create_surface_with_text(text, font_size, text_rgb, bg_rgb):
     """ Returns surface with text written on """
-    font = pygame.freetype.SysFont("Courier", font_size, bold=True)
+    font = pygame.freetype.SysFont("Sans", font_size, bold=True)
     surface, _ = font.render(text=text, fgcolor=text_rgb, bgcolor=bg_rgb)
     return surface.convert_alpha()
 
@@ -156,7 +166,7 @@ def play_level(screen):
 #buttons sprite renderer.
 def game_loop(screen, buttons):
 
-    bg_title = pygame.image.load("./assets/bg_title.png")
+    bg_title = pygame.image.load(resource_path("./assets/bg_title.png"))
     bg_title = pygame.transform.scale(bg_title, (SCREEN_WIDTH, SCREEN_HEIGHT))
     bg_title = bg_title.convert()
 

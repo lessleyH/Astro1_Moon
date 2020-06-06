@@ -1,7 +1,12 @@
 import sys
+import os
 import pygame
 import math
-from menu import GameState
+from menu import GameState,resource_path
+file_path = os.path.dirname(__file__)
+
+if getattr(sys, 'assets', False):
+    os.chdir(sys._MEIPASS)
 
 # constants
 size = width, height = 1040, 720 # pixels
@@ -26,26 +31,26 @@ def earth_moon(screen):
     ### LOAD SURFACES ###
 
     # background surface
-    background = pygame.image.load("./assets/earth_moon/space.jpg")
+    background = pygame.image.load(resource_path("assets/earth_moon/space.jpg"))
     background = pygame.transform.scale(background, size)
     background = background.convert()
 
     # earth surface
-    earth = pygame.image.load("./assets/earth_moon/earth_from_above_shadow.png")
+    earth = pygame.image.load(resource_path("assets/earth_moon/earth_from_above_shadow.png"))
     earth = pygame.transform.scale(earth, (int(earth_diameter*km_to_pixel), int(earth_diameter*km_to_pixel)))
     earth = earth.convert()
     earth_rect = earth.get_rect()
     earth_rect.centerx, earth_rect.centery = width/2, height/2
 
     # tiny moon surface
-    moon = pygame.image.load("./assets/earth_moon/moon_from_above.png")
+    moon = pygame.image.load(resource_path("assets/earth_moon/moon_from_above.png"))
     moon = pygame.transform.scale(moon, (int(moon_diameter*km_to_pixel), int(moon_diameter*km_to_pixel)))
     moon = moon.convert()
     moon_rect = moon.get_rect()
     moon_rect.centerx, moon_rect.centery = earth_rect.centerx, earth_rect.centery-int(lunar_distance*km_to_pixel)
 
     # arrow (pointing to tiny moon) surface
-    arrow = pygame.image.load("./assets/earth_moon/arrow.png")
+    arrow = pygame.image.load(resource_path("assets/earth_moon/arrow.png"))
     arrow = pygame.transform.scale(arrow, (30, 10))
     arrow_rect = arrow.get_rect()
     arrow_rect.centerx, arrow_rect.centery = arrow_rect.centerx, arrow_rect.centery-arrow.get_height()/2
@@ -55,7 +60,7 @@ def earth_moon(screen):
     zoom_border = pygame.Rect(arrow_rect.centerx + arrow_rect.width, arrow_rect.centery - zoom_size/2, zoom_size, zoom_size)
 
     # zoomed moon surface
-    moon_zoomed = pygame.image.load("./assets/earth_moon/moon_from_above_shadow.png")
+    moon_zoomed = pygame.image.load(resource_path("assets/earth_moon/moon_from_above_shadow.png"))
     moon_zoomed = pygame.transform.scale(moon_zoomed, (int(zoom_size*0.8), int(zoom_size*0.8)))
     moon_zoomed.convert()
     moon_zoomed_rect = moon_zoomed.get_rect()
@@ -65,7 +70,7 @@ def earth_moon(screen):
     phase_border = pygame.Rect(earth_rect.centerx + 5*earth_rect.width, earth_rect.centery - zoom_size/2, zoom_size, zoom_size)
     phases = []
     for i in range(1, 8+1):
-        phase = pygame.image.load("./assets/earth_moon/phase_{}.png".format(i))
+        phase = pygame.image.load(resource_path("assets/earth_moon/phase_{}.png").format(i))
         phase = pygame.transform.scale(phase, (int(zoom_size*0.8),int(zoom_size*0.8)))
         phase.convert()
         phase_rect = phase.get_rect()
@@ -74,27 +79,27 @@ def earth_moon(screen):
     phase_i = -1
 
     # zig-zag (separating sun from earth-moon system) surface
-    zig_zag = pygame.image.load("./assets/earth_moon/zig-zag.png")
+    zig_zag = pygame.image.load(resource_path("assets/earth_moon/zig-zag.png"))
     zig_zag = pygame.transform.scale(zig_zag, (50, height))
     zig_zag.convert()
     zig_zag_rect = zig_zag.get_rect()
     zig_zag_rect.center = (150, height/2)
 
     # sun surface
-    sun = pygame.image.load("./assets/earth_moon/sun.png")
+    sun = pygame.image.load(resource_path("assets/earth_moon/sun.png"))
     sun = pygame.transform.scale(sun, (int(sun_diameter*km_to_pixel), int(sun_diameter*km_to_pixel)))
     sun.convert()
     sun_rect = sun.get_rect()
     sun_rect.center = (-450, height/2)
 
     # text surfaces
-    font = pygame.font.SysFont(None, 24)
+    font = pygame.font.SysFont('Sans', 18)
     title = font.render('Lunar Phases:', True, WHITE)
     phase_title = font.render('Phase seen on Earth:', True, WHITE)
     zoom_title = font.render('Lunar surface:', True, WHITE)
     sun_title = font.render('The Sun:', True, WHITE)
     story = []
-    with open('./assets/earth_moon/story.txt') as file:
+    with open(resource_path('assets/earth_moon/story.txt')) as file:
         story = [font.render(line.rstrip('\n'), True, WHITE) for line in file]
     story_i = 0
     progress = font.render('{} of {}'.format(story_i+1, len(story)), True, WHITE)

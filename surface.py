@@ -1,6 +1,11 @@
 import sys
+import os
 import pygame
-from menu import GameState
+from menu import GameState,resource_path
+# get location of file
+file_path = os.path.dirname(__file__)
+if getattr(sys, 'assets', False):
+    os.chdir(sys._MEIPASS)
 
 # constants
 size = width, height = 1040, 720 # pixels
@@ -13,55 +18,54 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 ORANGE = (255, 165, 0)
 button_radius = 15
-
 def age_moon(screen):
     ### LOAD SURFACES ###
 
     # background surfaces
-    space = pygame.image.load("./assets/moon_age/space.jpg")
+    space = pygame.image.load(resource_path("assets/moon_age/space.jpg"))
     space = pygame.transform.scale(space, size)
     space = space.convert()
     space_rect = space.get_rect()
 
-    crater_counting = pygame.image.load("./assets/moon_age/crater_counting.png")
+    crater_counting = pygame.image.load(resource_path("assets/moon_age/crater_counting.png"))
     crater_counting = pygame.transform.scale(crater_counting, size)
     crater_counting = crater_counting.convert()
     crater_counting_rect = crater_counting.get_rect()
 
-    highlands = pygame.image.load("./assets/moon_age/highlands.png")
+    highlands = pygame.image.load(resource_path("assets/moon_age/highlands.png"))
     highlands = pygame.transform.scale(highlands, size)
     highlands = highlands.convert()
     highlands_rect = highlands.get_rect()
 
-    maria = pygame.image.load("./assets/moon_age/maria.png")
+    maria = pygame.image.load(resource_path("assets/moon_age/maria.png"))
     maria = pygame.transform.scale(maria, size)
     maria = maria.convert()
     maria_rect = maria.get_rect()
 
-    poles = pygame.image.load("./assets/moon_age/poles.png")
+    poles = pygame.image.load(resource_path("assets/moon_age/poles.png"))
     poles = pygame.transform.scale(poles, size)
     poles = poles.convert()
     poles_rect = poles.get_rect()
 
     # near-side of moon surface
-    near_side = pygame.image.load("./assets/moon_age/moon_near_side.png")
+    near_side = pygame.image.load(resource_path("assets/moon_age/moon_near_side.png"))
     near_side = pygame.transform.scale(near_side, (int(moon_diameter*km_to_pixel), int(moon_diameter*km_to_pixel)))
     near_side = near_side.convert()
     near_side_rect = near_side.get_rect()
     near_side_rect.centerx, near_side_rect.centery = width//2, height//2
 
     # far-side of moon surface
-    far_side = pygame.image.load("./assets/moon_age/moon_far_side.png")
+    far_side = pygame.image.load(resource_path("assets/moon_age/moon_far_side.png"))
     far_side = pygame.transform.scale(far_side, (int(moon_diameter*km_to_pixel), int(moon_diameter*km_to_pixel)))
     far_side = far_side.convert()
     far_side_rect = far_side.get_rect()
     far_side_rect.centerx, far_side_rect.centery = width//2, height//2
 
     # text surfaces
-    font = pygame.font.SysFont(None, 24)
+    font = pygame.font.SysFont('Sans', 18)
     title = font.render('Lunar Surface:', True, WHITE)
     story, stats, topic = {}, {}, None
-    with open('./assets/moon_age/story.txt') as file:
+    with open(resource_path('assets/moon_age/story.txt')) as file:
         for line in file:
             if line.startswith('*'):
                 topic = line[1:].rstrip('\n')

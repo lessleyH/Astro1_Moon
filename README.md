@@ -10,14 +10,11 @@
 - Walk through of the history of our moon
 
 ## How to play our game: 
-+ Download zip file from this repository
-+ Open your terminal and run the following comands: 
-> $ python3 -m pip install -U pygame --user
-
-> $ python3 main.py
++ Download the zip file names `Download_Game.zip` from this repository:
++ Open the zip and click on the fail named `main` twice and the game should open :)
++ The file does take a while to load...Please be patient
 
 ## User Stories
-
 The following functionality is **completed**:
 + [X] Start Screen
 + [X] Giant Impact Hypothesis
@@ -26,13 +23,14 @@ The following functionality is **completed**:
 + [X] Phases of the moon
 + [X] Age of certain Surface of the moon
 
-## Video Walkthrough
+## Walkthrough
+<img src=https://imgur.com/F60JOR5.gif/>
+
 [Imgur](https://imgur.com/F60JOR5)
 
+<img src=https://imgur.com/QEtMzlV.gif/>
+
 [Imgur](https://imgur.com/QEtMzlV)
-
-
- <!-- <img src='https://imgur.com/QEtMzlV' width='' alt='Origin of the Moon pt2' />  -->
 
 ## Credits
 
@@ -60,6 +58,10 @@ List an 3rd party libraries, icons, graphics, or other assets we used in our gam
   - https://ya-webdesign.com/explore/red-right-arrow-png/
 - Zig-zag image (zig-zag.png)
   - https://pngimage.net/zigzag-border-png/
+- Giant Impact Hypothesis (all images in directory /assests/gih) 
+  - https://www.nationalgeographic.com/news/2014/6/140605-earth-moon-theia-evidence-space-science/
+  - futura-sciences.com/planete/actualites/terre-or-terre-viendrait-chute-160-geocroiseurs-16938/
+  - 
 
 ## License
 
