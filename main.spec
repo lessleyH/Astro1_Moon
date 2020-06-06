@@ -4,7 +4,7 @@ block_cipher = None
 
 
 a = Analysis(['main.py'],
-             pathex=['/Users/lessleyhernandez/git_projs/Astro1_Moon'],
+             pathex=['/Astro1_Moon'],
              binaries=[],
              datas=[('./*.py','./'),('assets/*.png','assets/'),('assets/*.jpg','assets/'),('assets/gih/*.jpg','assets/gih/'),('assets/gih/*.png','assets/gih/'),('assets/gih/*.txt','assets/gih/'),('assets/earth_moon/*.jpg','assets/earth_moon/'),('assets/earth_moon/*.txt','assets/earth_moon/'),('assets/earth_moon/*.png','assets/earth_moon/'),('assets/moon_age/*.txt','assets/moon_age/'),('assets/moon_age/*.png','assets/moon_age/'),('assets/moon_age/*.jpg','assets/moon_age/')],
              hiddenimports=[],
