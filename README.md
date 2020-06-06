@@ -61,7 +61,12 @@ List an 3rd party libraries, icons, graphics, or other assets we used in our gam
 - Giant Impact Hypothesis (all images in directory /assests/gih) 
   - https://www.nationalgeographic.com/news/2014/6/140605-earth-moon-theia-evidence-space-science/
   - futura-sciences.com/planete/actualites/terre-or-terre-viendrait-chute-160-geocroiseurs-16938/
-  - 
+  - https://history.nasa.gov/ap11ann/kippsphotos/apollo.html
+  - svs.gsfc.nasa.gov
+  - https://toutiao.com/item/6265888710915523074/
+  - http://illustrato.de/mappe.html
+  - https://www.wired.com/2012/03/moon-formation-collision/
+  - https://blenderartists.org/t/theia-impact/1190285
 
 ## License
 
