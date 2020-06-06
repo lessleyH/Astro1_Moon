@@ -2,21 +2,22 @@
 
 *Origins of the Moon* is a game about the origins of the moon made for children.
 
-## Learning Objectives of Our Game
-- Discuss basic facts about the moon
-- Recognize moon phases when viewing the moon
-- Understand the origin of moon craters
-- Learn about theories on how the moon was created
-- Walk through of the history of our moon
-
 ## How to play our game: 
 + Download the zip file names `Download_Game.zip` from this repository:
 + Open the zip and click on the fail named `main` twice and the game should open :)
 + The file does take a while to load...Please be patient
 
+## Learning Objectives of Our Game
+- Discuss basic facts about the moon
+- Recognize moon phases when viewing the moon
+- Understand the origin of moon craters
+- Learn a theory on how the moon was created
+- Walk through of the history of our moon
+
 ## User Stories
 The following functionality is **completed**:
 + [X] Start Screen
++ [X] Menu Screen
 + [X] Giant Impact Hypothesis
 + [X] Spots of crater forming on the moon
 + [X] Earth Moon Systems
@@ -67,6 +68,9 @@ List an 3rd party libraries, icons, graphics, or other assets we used in our gam
   - http://illustrato.de/mappe.html
   - https://www.wired.com/2012/03/moon-formation-collision/
   - https://blenderartists.org/t/theia-impact/1190285
+- Libraries 
+ - Pygame 
+ -Pyinstaller
 
 ## License
 
