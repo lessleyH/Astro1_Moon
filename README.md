@@ -4,8 +4,18 @@
 
 ## How to play our game: 
 + Download the zip file names `Download_Game.zip` from this repository:
-+ Open the zip and click on the fail named `main` twice and the game should open :)
++ Open the zip and click on the file named `main` twice and the game should open :)
 + The file does take a while to load...Please be patient
+
+## If that doesn't work you can always: 
+- Download the zip file from this repository master branch:  
+- Download pygame by running this command in your terminal: 
+  `pip3 install pygame` or `python3 -m pip3 install -U pygame --user`
+- Then to see if it works run this command: 
+ `python3 -m pygame.examples.aliens` 
+- If that doesn't work please refer to pygame docs for installation https://www.pygame.org/wiki/GettingStarted
+- Open the zip file and run the following command in your terminal: 
+  `python3 main.py`
 
 ## Learning Objectives of Our Game
 - Discuss basic facts about the moon
